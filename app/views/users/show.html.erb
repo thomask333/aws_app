@@ -9,11 +9,12 @@
   <strong>Team:</strong>
   <%= @user.team.name %>
 </p>
-
+<%if @user.avatar.url != nil %>
 <p>
   <strong>Avatar:</strong>
-  <%= @user.avatar %>
+  <%= image_tag @user.avatar, class: "show-pic" %>
 </p>
+<% end -%>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

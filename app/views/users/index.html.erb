@@ -17,7 +17,9 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.team.name %></td>
-        <td><%= user.avatar %></td>
+        <%if user.avatar.url != nil %>
+        <td><%= image_tag user.avatar.url, class: "index-pic" %></td>
+        <% end -%>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
